@@ -1,0 +1,201 @@
+import './style.css'
+import * as THREE from "three";
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
+const scene = new THREE.Scene();
+
+// camera Field of view is the first second is aspect ratio and view Frustum
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+
+
+// create an AudioListener and add it to the camera
+// const listener = new THREE.AudioListener();
+// camera.add(listener)
+
+
+// create a global audio source
+// const sound = new THREE.Audio(listener);
+
+// Renderer make the magic happen
+const renderer = new THREE.WebGL1Renderer(
+  {
+    canvas: document.querySelector("#bg"),
+  }
+);
+
+// renderered
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight)
+
+// camera
+camera.position.setZ(30)
+
+
+// Render == Draw
+// camera.position.setZ(scene, camera);
+
+
+
+
+// load a sound and set it as the Audio object's buffer
+// const audioLoader = new THREE.AudioLoader();
+//   audioLoader.load( 'dreams.mp3', function( buffer ) {
+// 	sound.setBuffer( buffer );
+// 	sound.setLoop(true);
+// 	sound.setVolume(1);
+// 	sound.play();
+// });
+
+
+
+
+
+
+// geometry
+const geometry = new THREE.TorusGeometry(40, 2, 5, 12);
+const material = new THREE.MeshStandardMaterial({ color: 0xFEF5BF,wireframe: true});
+const torus = new THREE.Mesh(geometry, material);
+// scene.add(torus);
+
+
+
+
+
+
+
+// light 
+const pointLight = new THREE.PointLight(0xFF6347);
+pointLight.position.set(1, 1, 5)
+const ambientLight = new THREE.AmbientLight(0xFEF5BF)
+scene.add(pointLight, ambientLight);
+
+
+
+// light helper show light source and gridHelper that would give as line that horizen
+// const lighthelp = new THREE.PointLightHelper(pointLight);
+// const gridHelper = new THREE.GridHelper(200, 50)
+// scene.add(lighthelp);
+
+// controllers mouse
+const controls = new OrbitControls(camera, renderer.domElement);
+
+// create stars
+function addStars()
+{
+  const geometry = new THREE.SphereGeometry(1.5, 1.2, 1.2);
+  const material = new THREE.MeshStandardMaterial({color:  0xFEF5BF});
+  const star = new THREE.Mesh(geometry, material);
+  
+  // Here is random spread the stars 
+  const [x, y, z] = Array(20).fill().map(() => THREE.MathUtils.randFloatSpread(5000));
+
+  // position and
+  star.position.set(x, y, z);
+  setTimeout(() => {
+    scene.add(star)
+  }, 1000)
+}
+// setTimeout for stars
+const time = 
+setTimeout(() => {
+  Array(100000).fill().forEach(addStars)
+}, 0.2)
+// this add 200 starts random in screen
+
+
+// Texture space for background
+// const spaceTexture = new THREE.TextureLoader().load('space.jpeg');
+// scene.background = spaceTexture;
+
+
+// texture mapping using Mandalorian
+const mandalorianTexture = new THREE.TextureLoader().load('mandalorian.png');
+
+const Mandalorian = new THREE.Mesh(
+  new THREE.BoxGeometry(7, 7, 7),
+  new THREE.MeshBasicMaterial({map: mandalorianTexture})
+);
+scene.add(Mandalorian);
+
+
+// world  and also light using normalMap
+const worldTexture = new THREE.TextureLoader().load('world.jpeg');
+const normalTexture = new THREE.TextureLoader().load('normal-world.webp')
+const world = new THREE.Mesh(
+  new THREE.SphereGeometry(5, 52, 52),
+  new THREE.MeshStandardMaterial(
+    {
+      map: worldTexture,
+      normalMap: normalTexture
+    }
+  )
+);
+
+Mandalorian.add(world)
+
+
+// Moon that would animated around world
+const moon_Texture = new THREE.TextureLoader().load('moon.jpeg');
+const  moonNormalTexture = new THREE.TextureLoader().load('normalMoon.jpeg');
+const moonTextures = new THREE.Mesh(
+  new THREE.SphereGeometry(1, 200),
+  new THREE.MeshStandardMaterial(
+    {
+      map: moon_Texture,
+      normalMap: moonNormalTexture
+    }
+  )
+);
+world.add(moonTextures);
+// animation
+function animate()
+{
+  requestAnimationFrame(animate);
+  // World rotate auto
+  world.rotateX(0.009)
+  world.rotateY(0.01)
+  world.rotateZ(0.05)
+
+  // torus.rotateX(0.02)
+  
+  // You profile rotate auto
+  // update y 
+  Mandalorian.rotateY(0.004)
+  Mandalorian.rotateZ(0.004)
+  
+  controls.update();
+  renderer.render(scene, camera);
+}
+// position world
+world.position.x = 25;
+// world.position.setX(10);
+
+// Moon position
+moonTextures.position.x = 18;
+
+
+// function that calculate user scroll Add anthing you to use moveCamera
+function moveCamera()
+{
+  Mandalorian.rotateY(0.02)
+  Mandalorian.rotateZ(0.04)
+  const t = document.body.getBoundingClientRect().top;
+  camera.position.z = t * -0.01;
+  camera.position.x = t * -0.0002;
+  camera.position.y = t * -0.0002;
+}
+
+
+
+
+
+
+
+
+
+// Position of m
+// user scroll
+document.body.onscroll = moveCamera
+animate();
+
+

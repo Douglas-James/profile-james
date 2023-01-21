@@ -9,19 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <title>Profile</title>
-    <script type="module" crossorigin src="/assets/index.8a24f948.js"></script>
-    <link rel="stylesheet" href="/assets/index.d70aab09.css">
+     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" crossorigin src="/assets/index.7ed02e29.js"></script>
+    <link rel="stylesheet" href="/assets/index.842b01b8.css">
   </head>
   <body>
-    <main>
-      <canvas id="bg"></canvas>
-      <h1>World BETA1</h1>
-      <span id='time-left'></span>
-      <br>
-      <span id='leave'></span>
-      <!-- Don't move  -->
-      <p>Desktop version, working with mobile device up...updating coordinates</p>
-    </main>
+      <div class="flex h-screen">
+        <div class="w-1/2">
+          <h1>World BETA1</h1>
+          <span id='time-left'></span>
+          <br>
+          <span id='leave'></span>
+          <p>Desktop version, working with mobile device...updating...</p>
+        </div>
+        <div class="w-1/2" id="container">
+          <canvas></canvas>
+        </div>
+      </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     

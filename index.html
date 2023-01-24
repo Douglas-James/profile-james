@@ -10,18 +10,28 @@
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <title>Profile</title>
      <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script type="module" crossorigin src="/assets/index.8a73c633.js"></script>
+    <script type="module" crossorigin src="/assets/index.c96d519a.js"></script>
     <link rel="stylesheet" href="/assets/index.4d76616f.css">
   </head>
   <body>
+    <div class="bg-black bg-opacity-50 fixed p-4 px-3 rounded-lg" id="popup">
+       <h2 class="text-white text-sm">Waiting for update</h2>
+       <p class="text-white font-bold text-lg">number Waiting</p>
+    </div>
       <div class="flex h-screen">
         <div class="w-1/2">
-          <h1>World BETA1</h1>
+          <h1 class="text-white">World BETA1</h1>
           <span id='time-left'></span>
           <br>
           <span id='leave'></span>
-          <p>Desktop version, working with mobile device...updating...</p>
-        </div>
+          <p class="text-white">Desktop version, updating...</p>
+          <div class="bg-black bg-opacity-50 fixed p-4 px-3">
+            <audio id="audio">
+              <source src="/assets/Battlefield.9f22f329.mp4">
+            </audio>
+            <button id="play" class="text-white">The Sound is OFF</button>
+          </div>
+          </div>
         <div class="w-1/2" id="container">
           <canvas></canvas>
         </div>

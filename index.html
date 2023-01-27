@@ -6,30 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS only -->
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-    <title>World version 1.0.0</title>
+    <title>World version 1.2.5</title>
      <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script type="module" crossorigin src="/assets/index.5d55afeb.js"></script>
-    <link rel="stylesheet" href="/assets/index.2a9921bf.css">
+    <script type="module" crossorigin src="/assets/index.1cc0d9fc.js"></script>
+    <link rel="stylesheet" href="/assets/index.4d76616f.css">
   </head>
   <body>
-    <!-- world BEta info about countries -->
-    <div class="bg-black bg-opacity-50 fixed p-4 px-3 rounded-lg" id="popup">
+   
+    <!-- world BEta info about countries --> 
+    <!-- Don't remove the id  -->
+    <div class="bg-black bg-opacity-90 fixed p-4 px-3 rounded-lg" id="popup">
        <h2 class="text-white text-sm"><span id="population"></span></h2>
        <span id="capital" class="text-white text-sm"></span>
        <p class="text-white font-bold text-lg" id="populationValue"></p>
         <p id="loc" class="text-white text-sm">Updating</p>
          <!-- <span class="text-white">Flag</span> -->
-       <div class="img-sm" id="flag"></div>
-       <br>
-      <div class="bg-black fixed">
-        <p id="info" class="text-white"></p>
-      </div>
+       <div class="w-full max-w-sm rounded overflow-hidden shadow-lg" id="flag">
+          <div class="px-0 py-4">
+             <p class="text-white" id="info"></p>
+          </div>
+       </div>
     </div>
     
    <!-- Update  log with info about leaving soon -->
       <div class="flex h-screen">
         <div class="w-1/2">
-          <h1 class="text-white">World version 1.0.0</h1>
+          <h1 class="text-white">World version 1.2.5</h1>
           <span id='time-left'></span>
           <br>
           <span id='leave'></span>
@@ -38,7 +40,7 @@
           <p class="text-white text-sm">sound is automaticaly turn of click on The sound is OFF to to play the Sound</p> -->
 
           <h1 class="text-white">Desktop Version for move</h1>
-          <p class="text-white">Right click to move or lift click mouse to move.Hoover over a country to get details of that country some of the info is Updating.</p>
+          <p class="text-white">Right click to move or lift click mouse to move hoover of a country to get details some of the info is Updating.</p>
           <div class="bg-black bg-opacity-50 fixed p-4 px-3">
             <!-- <div class="bg-blue bg-opacity-50 rounded-lg border-4 border-indigo-500/100 ...">
               <h1 class="text-white" id="head">Step 0</h1>
@@ -48,9 +50,9 @@
            
             <!-- Sound system -->
             <audio id="audio">
-              <source src="/assets/dreams-cute.9e964e43.ogg">
+              <source src="/assets/james .e87c5ab1.mp3">
             </audio>
-            <button id="play" class="text-white">Sound is OFF</button>
+            <button id="play" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">&copy; Mim Soundtrack OFF</button>
           </div>
 
           <!-- Search would be release world V1.7 -->

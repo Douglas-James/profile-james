@@ -8,55 +8,50 @@
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <title>World version 1.2.5</title>
      <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script type="module" crossorigin src="/assets/index.1cc0d9fc.js"></script>
-    <link rel="stylesheet" href="/assets/index.4d76616f.css">
+    <script type="module" crossorigin src="/assets/index.56567e7e.js"></script>
+    <link rel="stylesheet" href="/assets/index.597fada2.css">
   </head>
   <body>
    
     <!-- world BEta info about countries --> 
     <!-- Don't remove the id  -->
     <div class="bg-black bg-opacity-90 fixed p-4 px-3 rounded-lg" id="popup">
-       <h2 class="text-white text-sm"><span id="population"></span></h2>
-       <span id="capital" class="text-white text-sm"></span>
-       <p class="text-white font-bold text-lg" id="populationValue"></p>
-        <p id="loc" class="text-white text-sm">Updating</p>
+       
+      <h2 class="text-white text-sm"><span id="population"></span></h2>
+       
+      <span id="capital" class="text-white text-sm"></span>
+      
+      <p class="text-white font-bold text-lg" id="populationValue"></p>
+        
+      <p id="loc" class="text-white text-sm">Updating</p>
          <!-- <span class="text-white">Flag</span> -->
-       <div class="w-full max-w-sm rounded overflow-hidden shadow-lg" id="flag">
+       
+         <div class="w-full max-w-sm rounded overflow-hidden shadow-lg" id="flag">
+         
           <div class="px-0 py-4">
              <p class="text-white" id="info"></p>
           </div>
-       </div>
+       
+        </div>
     </div>
     
+    
    <!-- Update  log with info about leaving soon -->
-      <div class="flex h-screen">
-        <div class="w-1/2">
-          <h1 class="text-white">World version 1.2.5</h1>
-          <span id='time-left'></span>
-          <br>
-          <span id='leave'></span>
-          <!-- <p class="text-white">How to move around the world</p>
-          <p class="text-white text-sm">To move around the world hold down right or lift click on the mouse for mobile use the touch. To get info about the country hoover over the animation by using the mouse or touch screen.</p>
-          <p class="text-white text-sm">sound is automaticaly turn of click on The sound is OFF to to play the Sound</p> -->
-<!-- 
-          <h1 class="text-white">Desktop Version for move</h1>
-          <p class="text-white">Right click to move or lift click mouse to move hoover of a country to get details some of the info is Updating.</p> -->
-          <div class="bg-black bg-opacity-50 fixed p-4 px-3">
-            <!-- <div class="bg-blue bg-opacity-50 rounded-lg border-4 border-indigo-500/100 ...">
-              <h1 class="text-white" id="head">Step 0</h1>
-              <p class="text-white" id="page">Thank you for view World BETA1</p>
-              <button id="next">next page</button>
-            </div> -->
-
-            <h1 class="text-white">Desktop</h1>
-           
-            <!-- Sound system -->
-            <audio id="audio">
-              <source src="/assets/james .e87c5ab1.mp3">
-            </audio>
-            <button id="play" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">&copy; Mim Soundtrack OFF</button>
+      <div class="xl:flex h-screen bg-black">
+        <div class="xl:w-1/2 flex flex-col justify-center">
+          <div style="max-width:500px" class="mx-auto" >
+            <h1 class="text-white text-8xl mb-4 font-exo ">World version 1.2.5</h1>
+            <span id='time-left' class="text-4xl"></span>
+            <br>
+            <span id='leave' class="text-4xl"></span>
+            <div>
+              <!-- Sound system -->
+              <audio id="audio">
+                <source src="/assets/james .e87c5ab1.mp3">
+              </audio>
+              <button id="play" class="bg-blue-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-green-500 rounded">&copy; Mim Soundtrack OFF</button>
+            </div>
           </div>
-
           <!-- Search would be release world V1.7 -->
           <!-- <br>
 
@@ -67,7 +62,7 @@
         </div>
 
         <!-- Three.js display -->
-        <div class="w-1/2" id="container">
+        <div class="h-screen xl:w-1/2" id="container">
           <canvas></canvas>
         </div>
       </div>

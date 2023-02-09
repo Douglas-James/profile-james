@@ -8,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <title>World version 1.2.5</title>
      <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script type="module" crossorigin src="/assets/index.56567e7e.js"></script>
+    <script type="module" crossorigin src="/assets/index.8556d734.js"></script>
     <link rel="stylesheet" href="/assets/index.597fada2.css">
   </head>
   <body>
@@ -40,7 +40,7 @@
       <div class="xl:flex h-screen bg-black">
         <div class="xl:w-1/2 flex flex-col justify-center">
           <div style="max-width:500px" class="mx-auto" >
-            <h1 class="text-white text-8xl mb-4 font-exo ">World version 1.2.5</h1>
+            <p class="text-white text-8xl mb-4 font-exo multiText"></p>
             <span id='time-left' class="text-4xl"></span>
             <br>
             <span id='leave' class="text-4xl"></span>
@@ -72,5 +72,16 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      var typingEffect = new Typed(".multiText",{
+        strings: ["World version 1.2.5", 'Profile waiting? Hint: Timer', "Color Changer Hint: Click Me!", "Are you Seeing this?", "Click on Mim Soundtrack OFF", "Hold down on right mouse or left mouse to move", 
+      "Move your mouse to Red cubes for details", 'Going to the Start'],
+        loop: true,
+        typeSpeed: 90,
+        backSpeed: 80,
+        backDelay: 1700,
+      })
+    </script>
   </body>
 </html>
